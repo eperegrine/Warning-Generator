@@ -42,6 +42,10 @@
     let phrases_b = ["PROTECT THE NHS", "CONTROL THE VIRUS", "MIND HOW YOU GO", "MAKE SOME MONEY", "WEAR A BIN BAG", "LEAVE IT TO DARWIN", "BE HAPPY NOW"]
     let phrases_c = ["SAVE LIVES", "SAVE MONEY", "GOOD LUCK", "BE LUCKY", "PROFIT??"]
 
+    let colors = ["#00A43B", "#0a1045", "#F46036", "#AA1155", "#E71d36"];
+
+    let root = document.documentElement;
+
     generate()
 
     function generate() {
@@ -50,9 +54,13 @@
       setRandomContent(BOX_C, phrases_c);
     }
 
+    function randomElement(items) {
+      return items[Math.floor(Math.random() * items.length)];
+    }
+
     function setRandomContent(box, phrases) {
-      
-      var phrase = phrases[Math.floor(Math.random() * phrases.length)];
+      root.style.setProperty('--warn-green', randomElement(colors));
+      var phrase = randomElement(phrases);
       console.log(phrase)
       box.innerHTML = phrase
     }
