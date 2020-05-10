@@ -1,6 +1,6 @@
 :root {
-  --warn-green: rgb(0,164,59);
-  --warn-yellow: rgb(255,245,0);
+  --warn-green: #00a43b;
+  --warn-yellow: #fff500;
   font-family: transport, Arial, Helvetica, sans-serif;
 }
 
@@ -15,13 +15,20 @@ body {
 
 .warning-box {
   box-sizing: border-box;
-  background: rgb(255,245,0);
+  background: #fff500;
   background: linear-gradient(135deg, 
     var(--warn-yellow) 9%, var(--warn-green) 9%, var(--warn-green) 18%, var(--warn-yellow) 18%,
     var(--warn-yellow) 27%, var(--warn-green) 27%, var(--warn-green) 36%, var(--warn-yellow) 36%,
     var(--warn-yellow) 45%, var(--warn-green) 45%, var(--warn-green) 54%, var(--warn-yellow) 54%,
     var(--warn-yellow) 63%, var(--warn-green) 63%, var(--warn-green) 72%, var(--warn-yellow) 72%, 
     var(--warn-yellow) 81%, var(--warn-green) 81%, var(--warn-green) 90%, var(--warn-yellow) 90%
+  );
+  background: repeating-linear-gradient(
+    135deg,
+    var(--warn-yellow),
+    var(--warn-yellow) 8vw,
+    var(--warn-green) 8vw,
+    var(--warn-green) 16vw
   );
   width: 100%;
   height: 90vh;
