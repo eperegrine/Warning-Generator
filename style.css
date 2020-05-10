@@ -74,7 +74,7 @@ body {
 }
 .copyright {
   text-align: center;
-  background-color: var(--warn-green);
+  background-color: #00A43B;
   padding: 5px;
   font-size: .8em;
 }
