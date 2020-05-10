@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning Generator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <div class="warning-box">
+      <div class="message-container">
+        <div class="message" id="box-a">
+          STAY ALERT
+        </div>
+        <div class="arrow"></div>
+        <div class="message" id="box-b">
+          CONTROL THE VIRUS
+        </div>
+        <div class="arrow"></div>
+        <div class="message" id="box-c">
+          SAVE LIVES
+        </div>
+      </div>
+    </div>
+    
+      <button id="generate-btn" onclick="generate();">GENERATE</button>
+      <div class="copyright">
+        This site uses Transport Heavy, which is subject to Crown Copyright, and this font contains public sector information licensed under the Open Government Licence v1.0. 
+        
+        It was obtained from <a href="https://www.roads.org.uk/fonts" target="_blank">https://www.roads.org.uk/fonts</a>
+        
+        The terms of the Open Government Licence can be read at this address:
+        <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/" target="_blank">http://www.nationalarchives.gov.uk/doc/open-government-licence/</a>
+      </div>
+  </body>
+  <script>
+    let BOX_A = document.getElementById("box-a");
+    let BOX_B = document.getElementById("box-b");
+    let BOX_C = document.getElementById("box-c");
+
+    let phrases_a = ["STAY HOME", "STAY ALERT", "KEEP CALM", "CHILL OUT", "do whatevs", "OOH, CAREFUL", "DON'T WORRY"]
+    let phrases_b = ["PROTECT THE NHS", "CONTROL THE VIRUS", "MIND HOW YOU GO", "MAKE SOME MONEY", "WEAR A BIN BAG", "LEAVE IT TO DARWIN", "BE HAPPY NOW"]
+    let phrases_c = ["SAVE LIVES", "SAVE MONEY", "GOOD LUCK", "BE LUCKY", "PROFIT??"]
+
+    generate()
+
+    function generate() {
+      setRandomContent(BOX_A, phrases_a);
+      setRandomContent(BOX_B, phrases_b);
+      setRandomContent(BOX_C, phrases_c);
+    }
+
+    function setRandomContent(box, phrases) {
+      
+      var phrase = phrases[Math.floor(Math.random() * phrases.length)];
+      console.log(phrase)
+      box.innerHTML = phrase
+    }
+  </script>
+</html>
